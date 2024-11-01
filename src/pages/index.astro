@@ -1,16 +1,86 @@
 ---
-
+import RootLayout from "../layouts/root.astro"
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<RootLayout title="Mortgage repayment calculator">
+  <main>
+    <!-- calculator component -->
+    <div>
+      <!-- form component -->
+      <form>
+        <header>
+          <h1>Mortgage repayment calculator</h1>
+          <button>Clear All</button>
+        </header>
+        <main>
+          <div>
+            <label>
+              Mortgage Amount
+              <input type="number" />
+            </label>
+          </div>
+          <div>
+            <label>
+              Mortgage Term
+              <input type="number" />
+            </label>
+            <label>
+              Interest Rate
+              <input type="number" />
+            </label>
+          </div>
+          <div>
+            <label>
+              Mortgage Type
+              <label>
+                <input type="radio" name="type" value="repayment" />
+                Repayment
+              </label>
+              <label>
+                <input type="radio" name="type" value="interest-only" />
+                Interest Only
+              </label>
+            </label>
+          </div>
+        </main>
+        <footer>
+          <button>
+            <img src="./icons/calculator.svg" alt="calculator" />
+            Calculate Repayments
+          </button>
+        </footer>
+      </form>
+      <!-- results component -->
+      <div>
+        <!-- empty state -->
+        <div>
+          <img src="./illustrations/empty.svg" alt="" />
+          <h2>Results shown here</h2>
+          <p>
+            Complete the form and click "calculate repayments" to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <!-- complete state -->
+        <div>
+          <h2>Your results</h2>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click "calculate
+            repayments" again.
+          </p>
+          <div>
+            <div>
+              <h3>Your monthly repayments</h3>
+              <p>$1,797.74</p>
+            </div>
+            <div>
+              <h3>Total you'll repay over the term</h3>
+              <p>$539,322.94</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</RootLayout>

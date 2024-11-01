@@ -1,0 +1,31 @@
+---
+import Attribution from "@/components/attribution.astro"
+import BaseHead from "@/components/base-head.astro"
+import "@/styles/globals.css"
+
+const { title } = Astro.props
+---
+
+<html lang="en">
+  <BaseHead>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | {title}</title>
+  </BaseHead>
+  <body>
+    <slot />
+    <footer class="main-footer">
+      <Attribution name="Abián Izquierdo" url="https://www.abizmo.dev" />
+    </footer>
+  </body>
+</html>
+
+<style>
+  .main-footer {
+    margin-block: 2rem 3rem;
+  }
+</style>

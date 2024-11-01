@@ -1,0 +1,54 @@
+:root {
+  --clr-lime: 61 70% 52%;
+  --clr-red: 4 69% 50%;
+  --clr-white: 0 0% 100%;
+  --clr-slate-100: 202 86% 94%;
+  --clr-slate-300: 203 41% 72%;
+  --clr-slate-500: 200 26% 54%;
+  --clr-slate-700: 200 24% 40%;
+  --clr-slate-900: 202 55% 16%;
+
+  --clr-neutral-000: var(--clr-white);
+  --clr-neutral-100: var(--clr-slate-100);
+  --clr-neutral-300: var(--clr-slate-300);
+  --clr-neutral-500: var(--clr-slate-500);
+  --clr-neutral-700: var(--clr-slate-700);
+  --clr-neutral-900: var(--clr-slate-900);
+
+  --clr-accent-400: var(--clr-lime);
+  --clr-error-400: var(--clr-red);
+
+  --ff-sans: "Plus Jakarta Sans", sans-serif;
+
+  --fs-400: 1rem;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* general styling */
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  background-color: hsl(var(--clr-neutral-100));
+}
