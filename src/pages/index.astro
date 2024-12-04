@@ -1,5 +1,8 @@
 ---
 import RootLayout from "../layouts/root.astro"
+import CompletedState from "@/components/completed-state.astro"
+import EmptyState from "@/components/empty-state.astro"
+import ToggleContainer from "@/components/toggle-container"
 ---
 
 <RootLayout title="Mortgage repayment calculator">
@@ -52,34 +55,14 @@ import RootLayout from "../layouts/root.astro"
       </form>
       <!-- results component -->
       <div>
-        <!-- empty state -->
-        <div>
-          <img src="./illustrations/empty.svg" alt="" />
-          <h2>Results shown here</h2>
-          <p>
-            Complete the form and click "calculate repayments" to see what your
-            monthly repayments would be.
-          </p>
-        </div>
-        <!-- complete state -->
-        <div>
-          <h2>Your results</h2>
-          <p>
-            Your results are shown below based on the information you provided.
-            To adjust the results, edit the form and click "calculate
-            repayments" again.
-          </p>
-          <div>
-            <div>
-              <h3>Your monthly repayments</h3>
-              <p>$1,797.74</p>
-            </div>
-            <div>
-              <h3>Total you'll repay over the term</h3>
-              <p>$539,322.94</p>
-            </div>
-          </div>
-        </div>
+        <ToggleContainer client:load>
+          <Fragment slot="false">
+            <EmptyState />
+          </Fragment>
+          <Fragment slot="true">
+            <CompletedState />
+          </Fragment>
+        </ToggleContainer>
       </div>
     </div>
   </main>
