@@ -1,8 +1,10 @@
 ---
-import RootLayout from "../layouts/root.astro"
 import CompletedState from "@/components/completed-state.astro"
 import EmptyState from "@/components/empty-state.astro"
+import FormCalculator from "@/components/form-calculator"
+import Input from "@/components/input"
 import ToggleContainer from "@/components/toggle-container"
+import RootLayout from "@/layouts/root.astro"
 ---
 
 <RootLayout title="Mortgage repayment calculator">
@@ -10,49 +12,36 @@ import ToggleContainer from "@/components/toggle-container"
     <!-- calculator component -->
     <div>
       <!-- form component -->
-      <form>
+      <FormCalculator client:load>
         <header>
           <h1>Mortgage repayment calculator</h1>
-          <button>Clear All</button>
+          <button type="reset">Clear All</button>
         </header>
         <main>
+          <Input label="Mortgage Amount" id="amount" client:load />
           <div>
-            <label>
-              Mortgage Amount
-              <input type="number" />
-            </label>
+            <Input label="Mortgage Term" id="term" client:load />
+            <Input label="Interest Rate" id="interestRate" client:load />
           </div>
-          <div>
+          <fieldset>
+            <legend>Mortgage Type</legend>
             <label>
-              Mortgage Term
-              <input type="number" />
+              <input type="radio" name="type" value="repayment" />
+              Repayment
             </label>
             <label>
-              Interest Rate
-              <input type="number" />
+              <input type="radio" name="type" value="interest-only" />
+              Interest Only
             </label>
-          </div>
-          <div>
-            <label>
-              Mortgage Type
-              <label>
-                <input type="radio" name="type" value="repayment" />
-                Repayment
-              </label>
-              <label>
-                <input type="radio" name="type" value="interest-only" />
-                Interest Only
-              </label>
-            </label>
-          </div>
+          </fieldset>
         </main>
         <footer>
-          <button>
+          <button type="submit">
             <img src="./icons/calculator.svg" alt="calculator" />
             Calculate Repayments
           </button>
         </footer>
-      </form>
+      </FormCalculator>
       <!-- results component -->
       <div>
         <ToggleContainer client:load>
