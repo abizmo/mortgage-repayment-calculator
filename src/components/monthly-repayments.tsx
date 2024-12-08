@@ -27,7 +27,6 @@ function MonthlyRepayments() {
   }
 
   useEffect(() => {
-    console.log($hasResults)
     if (type === "repayment") setState(calculateMonthlyRepayments())
     else setState(calculateMonthlyInterests())
   }, [$hasResults])

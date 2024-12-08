@@ -3,8 +3,21 @@ import CompletedState from "@/components/completed-state.astro"
 import EmptyState from "@/components/empty-state.astro"
 import FormCalculator from "@/components/form-calculator"
 import Input from "@/components/input"
+import Select, { type SelectOption } from "@/components/select"
 import ToggleContainer from "@/components/toggle-container"
 import RootLayout from "@/layouts/root.astro"
+import type { MortgageTypes } from "@/stores/calculator"
+
+const options: SelectOption<MortgageTypes>[] = [
+  {
+    label: "Repayment",
+    value: "repayment",
+  },
+  {
+    label: "Interest Only",
+    value: "interest-only",
+  },
+]
 ---
 
 <RootLayout title="Mortgage repayment calculator">
@@ -23,17 +36,7 @@ import RootLayout from "@/layouts/root.astro"
             <Input label="Mortgage Term" id="term" client:load />
             <Input label="Interest Rate" id="interestRate" client:load />
           </div>
-          <fieldset>
-            <legend>Mortgage Type</legend>
-            <label>
-              <input type="radio" name="type" value="repayment" />
-              Repayment
-            </label>
-            <label>
-              <input type="radio" name="type" value="interest-only" />
-              Interest Only
-            </label>
-          </fieldset>
+          <Select label="Mortgage Type" options={options} client:load />
         </main>
         <footer>
           <button type="submit">

@@ -5,6 +5,7 @@ interface InputProps {
   id: keyof Inputs
 }
 
+// TODO: decidir si se queda asi o lo dejo solo para valores numericos
 function Input({ label, id }: InputProps) {
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = evt.currentTarget
