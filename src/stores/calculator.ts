@@ -35,10 +35,6 @@ export interface Input {
   value: number | MortgageTypes
 }
 
-export function isValidValue(value: string): value is MortgageTypes {
-  return value === "repayment" || value === "interest-only"
-}
-
 export const changeInput = ({ input, value }: Input) => {
   inputs.setKey(input, value)
 }

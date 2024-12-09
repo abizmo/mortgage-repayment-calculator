@@ -8,6 +8,11 @@ function MonthlyRepayments() {
   const { amount, interestRate, term, type } = data
   const [{ monthly, total }, setState] = useState({ monthly: 0, total: 0 })
 
+  const currencyFormatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  })
+
   const calculateMonthlyRepayments = () => {
     const monthlyInterestRate = interestRate / 12 / 100
 
@@ -20,7 +25,7 @@ function MonthlyRepayments() {
   }
 
   const calculateMonthlyInterests = () => {
-    const monthly = amount * interestRate
+    const monthly = amount * (interestRate / 100 / 12)
     const total = monthly * term * 12
 
     return { monthly, total }
@@ -35,11 +40,11 @@ function MonthlyRepayments() {
     <>
       <div>
         <h3>Your monthly repayments</h3>
-        <p>${monthly}</p>
+        <p>{currencyFormatter.format(monthly)}</p>
       </div>
       <div>
         <h3>Total you'll repay over the term</h3>
-        <p>${total}</p>
+        <p>{currencyFormatter.format(total)}</p>
       </div>
     </>
   )
