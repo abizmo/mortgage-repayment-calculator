@@ -1,0 +1,17 @@
+.resultsBox {
+  background-color: hsl(var(--clr-neutral-900));
+  border-radius: 0.5rem;
+  border-top: 0.25rem solid hsl(var(--clr-accent-400));
+  padding: 1.5rem 1rem;
+}
+
+.resultsBox > div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.mainResult {
+  border-bottom: 1px solid hsl(var(--clr-neutral-700));
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}

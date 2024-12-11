@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { useStore } from "@nanostores/react"
 import { hasResults, inputs } from "@/stores/calculator"
+import styles from "@/components/monthly-repayments.module.css"
 
 function MonthlyRepayments() {
   const $hasResults = useStore(hasResults)
-  const data = useStore(inputs)
-  const { amount, interestRate, term, type } = data
+  const { amount, interestRate, term, type } = useStore(inputs)
   const [{ monthly, total }, setState] = useState({ monthly: 0, total: 0 })
 
   const currencyFormatter = new Intl.NumberFormat("en-US", {
@@ -37,16 +37,18 @@ function MonthlyRepayments() {
   }, [$hasResults])
 
   return (
-    <>
-      <div>
+    <div className={styles.resultsBox}>
+      <div className={styles.mainResult}>
         <h3>Your monthly repayments</h3>
-        <p>{currencyFormatter.format(monthly)}</p>
+        <p className="fs-900 fw-bold text-accent">
+          {currencyFormatter.format(monthly)}
+        </p>
       </div>
       <div>
         <h3>Total you'll repay over the term</h3>
-        <p>{currencyFormatter.format(total)}</p>
+        <p className="fs-700 fw-bold">{currencyFormatter.format(total)}</p>
       </div>
-    </>
+    </div>
   )
 }
 
