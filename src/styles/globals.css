@@ -20,6 +20,8 @@
 
   --ff-sans: "Plus Jakarta Sans", sans-serif;
 
+  --fs-900: 2.5rem;
+  --fs-700: 1.5rem;
   --fs-400: 1rem;
 
   --fw-regular: 500;
@@ -50,5 +52,28 @@ svg {
 body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
   background-color: hsl(var(--clr-neutral-100));
+  color: hsl(var(--clr-neutral-700));
+}
+
+/* utility classes */
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.text-dark {
+  color: hsl(var(--clr-neutral-900));
+}
+
+.text-accent {
+  color: hsl(var(--clr-accent-400));
 }
