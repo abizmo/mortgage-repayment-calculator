@@ -1,0 +1,26 @@
+---
+
+---
+
+<div class="calculator">
+  <slot />
+</div>
+
+<style>
+  .calculator {
+    display: grid;
+    width: max(640px, 90vw);
+    max-width: min(100vw, 1008px);
+    background-color: hsl(var(--clr-neutral-000));
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 25px 50px -12px;
+
+    @media (width >= 640px) {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    @media (width >= 1024px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
