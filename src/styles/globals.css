@@ -77,3 +77,8 @@ body {
 .text-accent {
   color: hsl(var(--clr-accent-400));
 }
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
