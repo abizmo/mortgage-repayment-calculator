@@ -1,5 +1,5 @@
 .resultsBox {
-  background-color: hsl(var(--clr-neutral-900));
+  background-color: hsl(var(--clr-neutral-999) / 0.25);
   border-radius: 0.5rem;
   border-top: 0.25rem solid hsl(var(--clr-accent-400));
   padding: 1.5rem 1rem;

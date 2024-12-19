@@ -1,4 +1,5 @@
 :root {
+  --clr-black: 0 0% 0%;
   --clr-lime: 61 70% 52%;
   --clr-red: 4 69% 50%;
   --clr-white: 0 0% 100%;
@@ -14,6 +15,7 @@
   --clr-neutral-500: var(--clr-slate-500);
   --clr-neutral-700: var(--clr-slate-700);
   --clr-neutral-900: var(--clr-slate-900);
+  --clr-neutral-999: var(--clr-black);
 
   --clr-accent-400: var(--clr-lime);
   --clr-error-400: var(--clr-red);
@@ -68,6 +70,11 @@ body {
 
 .fw-bold {
   font-weight: var(--fw-bold);
+}
+
+.bg-dark {
+  background-color: hsl(var(--clr-neutral-900));
+  color: hsl(var(--clr-neutral-000));
 }
 
 .text-dark {
