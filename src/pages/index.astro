@@ -1,4 +1,5 @@
 ---
+import Button from "@/components/button.astro"
 import Calculator from "@/components/calculator.astro"
 import CompletedState from "@/components/completed-state.astro"
 import EmptyState from "@/components/empty-state.astro"
@@ -29,7 +30,7 @@ const options: SelectOption<MortgageTypes>[] = [
       <FormCalculator client:load>
         <header>
           <h1 class="fs-700 fw-bold text-dark">Mortgage Calculator</h1>
-          <button type="reset">Clear All</button>
+          <Button variant="link" type="reset">Clear All</Button>
         </header>
         <main>
           <Input label="Mortgage Amount" id="amount" client:load />
@@ -40,10 +41,9 @@ const options: SelectOption<MortgageTypes>[] = [
           <Select label="Mortgage Type" options={options} client:load />
         </main>
         <footer>
-          <button type="submit">
-            <img src="./icons/calculator.svg" alt="calculator" />
+          <Button variant="button" icon="./icons/calculator.svg" type="submit">
             Calculate Repayments
-          </button>
+          </Button>
         </footer>
       </FormCalculator>
       <!-- results component -->

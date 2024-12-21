@@ -1,0 +1,57 @@
+---
+import type { HTMLAttributes } from "astro/types"
+
+interface Props extends HTMLAttributes<"button"> {
+  icon?: string
+  variant: "button" | "link"
+}
+const { icon, variant, ...props } = Astro.props
+---
+
+<button class={variant} {...props}>
+  {icon && <img src={icon} alt="" />}
+  <slot />
+</button>
+
+<style>
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .button {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem 2.5rem;
+    border-radius: 9999rem;
+    background: hsl(var(--clr-accent-400));
+    color: hsl(var(--clr-neutral-900));
+    font-weight: 700;
+
+    transition: background 0.2s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      background: hsl(var(--clr-accent-400) / 0.55);
+    }
+  }
+
+  .link {
+    background: none;
+    color: hsl(var(--clr-body));
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      color: hsl(var(--clr-neutral-900));
+    }
+  }
+</style>
