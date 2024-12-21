@@ -17,6 +17,7 @@
   --clr-neutral-900: var(--clr-slate-900);
   --clr-neutral-999: var(--clr-black);
 
+  --clr-body: var(--clr-neutral-700);
   --clr-accent-400: var(--clr-lime);
   --clr-error-400: var(--clr-red);
 
@@ -56,7 +57,7 @@ body {
   font-size: var(--fs-400);
   font-weight: var(--fw-regular);
   background-color: hsl(var(--clr-neutral-100));
-  color: hsl(var(--clr-neutral-700));
+  color: hsl(var(--clr-body));
 }
 
 /* utility classes */
