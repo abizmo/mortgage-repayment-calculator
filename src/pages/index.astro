@@ -33,10 +33,27 @@ const options: SelectOption<MortgageTypes>[] = [
           <Button variant="link" type="reset">Clear All</Button>
         </header>
         <main>
-          <Input label="Mortgage Amount" id="amount" client:load />
+          <Input
+            label="Mortgage Amount"
+            id="amount"
+            decorator="$"
+            client:load
+          />
           <div>
-            <Input label="Mortgage Term" id="term" client:load />
-            <Input label="Interest Rate" id="interestRate" client:load />
+            <Input
+              label="Mortgage Term"
+              id="term"
+              decorator="years"
+              reverse
+              client:load
+            />
+            <Input
+              label="Interest Rate"
+              id="interestRate"
+              decorator="%"
+              reverse
+              client:load
+            />
           </div>
           <Select label="Mortgage Type" options={options} client:load />
         </main>

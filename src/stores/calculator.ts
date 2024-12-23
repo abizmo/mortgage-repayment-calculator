@@ -14,6 +14,13 @@ export interface Inputs {
   type: MortgageTypes
 }
 
+export interface ErrorInputs {
+  amount: "This field is required" | undefined
+  interestRate: "This field is required" | undefined
+  term: "This field is required" | undefined
+  type: "This field is required" | undefined
+}
+
 const initialState: Inputs = {
   amount: 0,
   interestRate: 0,
@@ -21,9 +28,18 @@ const initialState: Inputs = {
   type: "repayment",
 }
 
+const initialErrorState: ErrorInputs = {
+  amount: undefined,
+  interestRate: undefined,
+  term: undefined,
+  type: undefined,
+}
+
 export const inputs = map<Inputs>(initialState)
 
 export const hasResults = atom<number>(0)
+
+export const errors = map<ErrorInputs>(initialErrorState)
 
 export const reset = () => {
   inputs.set(initialState)
