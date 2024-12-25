@@ -15,10 +15,10 @@ export interface Inputs {
 }
 
 export interface ErrorInputs {
-  amount: "This field is required" | undefined
-  interestRate: "This field is required" | undefined
-  term: "This field is required" | undefined
-  type: "This field is required" | undefined
+  amount: "This field is required" | "" | undefined
+  interestRate: "This field is required" | "" | undefined
+  term: "This field is required" | "" | undefined
+  type: "This field is required" | "" | undefined
 }
 
 const initialState: Inputs = {
@@ -53,4 +53,12 @@ export interface Input {
 
 export const changeInput = ({ input, value }: Input) => {
   inputs.setKey(input, value)
+}
+
+export const addError = (input: keyof ErrorInputs) => {
+  errors.setKey(input, "This field is required")
+}
+
+export const removeError = (input: keyof ErrorInputs) => {
+  errors.setKey(input, "")
 }
