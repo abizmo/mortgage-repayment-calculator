@@ -62,8 +62,13 @@ const options: SelectOption<MortgageTypes>[] = [
             client:load
           />
         </main>
-        <footer>
-          <Button variant="button" icon="./icons/calculator.svg" type="submit">
+        <footer class="form-footer">
+          <Button
+            class="w-full"
+            variant="button"
+            icon="./icons/calculator.svg"
+            type="submit"
+          >
             Calculate Repayments
           </Button>
         </footer>
@@ -116,6 +121,12 @@ const options: SelectOption<MortgageTypes>[] = [
     @media (width >= 640px) {
       grid-template-columns: repeat(2, 1fr);
       align-items: start;
+    }
+  }
+
+  .form-footer {
+    @media (width >= 640px) {
+      justify-self: start;
     }
   }
 </style>

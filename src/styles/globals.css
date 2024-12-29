@@ -91,3 +91,7 @@ body {
   display: grid;
   gap: 1rem;
 }
+
+.w-full {
+  width: 100%;
+}
