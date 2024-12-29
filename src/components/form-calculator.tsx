@@ -1,4 +1,5 @@
 import { addError, hasResults, removeError, reset } from "@/stores/calculator"
+import styles from "@/styles/form-calculator.module.css"
 
 interface FormElements extends HTMLFormControlsCollection {
   amount: HTMLInputElement
@@ -61,7 +62,11 @@ function FormCalculator({ children }: React.PropsWithChildren) {
   }
 
   return (
-    <form onSubmit={handleSubmit} onReset={handleReset}>
+    <form
+      className={styles.formCalculator}
+      onSubmit={handleSubmit}
+      onReset={handleReset}
+    >
       {children}
     </form>
   )
