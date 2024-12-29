@@ -11,7 +11,7 @@ export interface Inputs {
   amount: number
   interestRate: number
   term: number
-  type: MortgageTypes
+  type: MortgageTypes | undefined
 }
 
 export interface ErrorInputs {
@@ -25,7 +25,7 @@ const initialState: Inputs = {
   amount: 0,
   interestRate: 0,
   term: 0,
-  type: "repayment",
+  type: undefined,
 }
 
 const initialErrorState: ErrorInputs = {
@@ -44,6 +44,7 @@ export const errors = map<ErrorInputs>(initialErrorState)
 export const reset = () => {
   inputs.set(initialState)
   hasResults.set(0)
+  errors.set(initialErrorState)
 }
 
 export interface Input {

@@ -1,0 +1,63 @@
+.label {
+  display: grid;
+  border: none;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+
+.container {
+  padding: 1rem;
+  border: 1px solid hsl(var(--clr-neutral-500));
+  border-radius: 0.375rem;
+  overflow: hidden;
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &:hover,
+  &:focus-within,
+  & *:focus-within,
+  & *:hover {
+    cursor: pointer;
+    border-color: hsl(var(--clr-accent-400));
+  }
+}
+
+.selected {
+  background-color: hsl(var(--clr-accent-400) / 0.15);
+  border-color: hsl(var(--clr-accent-400));
+}
+
+.error > .message {
+  color: hsl(var(--clr-error-400));
+}
+
+.message {
+  font-size: var(--fs-300);
+}
+
+.input {
+  appearance: none;
+  color: currentColor;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.input::before {
+  content: "";
+  width: 0.75rem;
+  height: 0.75em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em hsl(var(--clr-accent-400));
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
