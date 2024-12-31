@@ -30,6 +30,10 @@
 
   --fw-regular: 500;
   --fw-bold: 700;
+
+  @media (min-width: 768px) {
+    --fs-900: 3.5rem;
+  }
 }
 
 /* reset */

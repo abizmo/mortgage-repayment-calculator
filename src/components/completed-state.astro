@@ -2,7 +2,7 @@
 import MonthlyRepayments from "@/components/monthly-repayments"
 ---
 
-<div class="grid">
+<div>
   <h2 class="fs-700 fw-bold">Your results</h2>
   <p>
     Your results are shown below based on the information you provided. To
@@ -12,3 +12,12 @@ import MonthlyRepayments from "@/components/monthly-repayments"
     <MonthlyRepayments client:load />
   </div>
 </div>
+
+<style>
+  h2 {
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 2.5rem;
+  }
+</style>
