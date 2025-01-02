@@ -11,6 +11,17 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   reverse?: boolean
 }
 
+// Formateador para números
+const formatNumber = (value: string): string => {
+  const [integer, decimal] = value.split(".")
+  const formattedInteger = parseInt(
+    integer.replace(/\D/g, "") || "0",
+  ).toLocaleString("en-US")
+  return decimal !== undefined
+    ? `${formattedInteger}.${decimal}`
+    : formattedInteger
+}
+
 function Input({
   decorator,
   reverse = false,
@@ -20,11 +31,14 @@ function Input({
   ...props
 }: InputProps) {
   const { [id]: error } = useStore(errors)
+
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = evt.currentTarget
+    const formattedValue = formatNumber(value)
 
-    if (!isNaN(+value)) {
-      changeInput({ input: id, value: +value })
+    evt.currentTarget.value = formattedValue
+    if (!isNaN(+formattedValue.replace(/,/g, ""))) {
+      changeInput({ input: id, value: +formattedValue.replace(/,/g, "") })
     }
   }
 

@@ -12,7 +12,7 @@ interface FormElement extends HTMLFormElement {
   readonly elements: FormElements
 }
 
-interface FormEvent extends React.FormEvent<FormElement> {}
+interface FormEvent extends React.FormEvent<FormElement> { }
 
 // TODO: extract the validate function from the FormCalculator component
 const validate = (elements: FormElements) => {
