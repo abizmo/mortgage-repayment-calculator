@@ -2,19 +2,19 @@ import { useStore } from "@nanostores/react"
 import { hasResults } from "@/stores/calculator"
 
 interface ToggleContainerProps {
-  true: React.ReactNode
-  false: React.ReactNode
+  trueComponent: React.ReactNode
+  falseComponent: React.ReactNode
 }
 
-function ToggleContainer({
-  true: ActiveComponent,
-  false: FalseComponent,
-}: ToggleContainerProps) {
+const ToggleContainer: React.FC<ToggleContainerProps> = ({
+  trueComponent,
+  falseComponent,
+}) => {
   const $hasResults = useStore(hasResults)
 
-  if ($hasResults) return ActiveComponent
+  if ($hasResults) return trueComponent
 
-  return FalseComponent
+  return falseComponent
 }
 
 export default ToggleContainer
