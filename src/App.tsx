@@ -1,5 +1,11 @@
+import MortgageCalculator from "./components/mortgage-calculator";
+
 function App() {
-  return <h1>mortgage repayment calculator</h1>;
+  return (
+    <main>
+      <MortgageCalculator />
+    </main>
+  );
 }
 
 export default App;
