@@ -39,6 +39,14 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-guide-primary: var(--clr-primary);
+  --color-guide-danger: var(--clr-danger);
+  --color-guide-200: var(--clr-neutral-200);
+  --color-guide-300: var(--clr-neutral-300);
+  --color-guide-500: var(--clr-neutral-500);
+  --color-guide-700: var(--clr-neutral-700);
+  --color-guide-900: var(--clr-neutral-900);
 }
 
 :root {
