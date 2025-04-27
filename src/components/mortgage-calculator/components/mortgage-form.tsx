@@ -189,7 +189,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                   // defaultValue={field.value}
                   className="flex flex-col"
                 >
-                  <FormItem className="group has-checked:border-primary has-checked:bg-primary/15 flex items-center space-x-4 space-y-0 border border-guide-500 p-4 rounded-md">
+                  <FormItem className="relative group has-checked:border-primary has-checked:bg-primary/15 flex items-center space-x-4 space-y-0 border border-guide-500 p-4 rounded-md">
                     <FormControl>
                       <RadioGroupItem
                         value="repayment"
@@ -197,10 +197,11 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                       />
                     </FormControl>
                     <FormLabel className="text-guide-900 font-bold">
+                      <span className="absolute inset-0"></span>
                       Repayment
                     </FormLabel>
                   </FormItem>
-                  <FormItem className="group has-checked:border-primary has-checked:bg-primary/15 flex items-center space-x-4 space-y-0 border border-guide-500 p-4 rounded-md">
+                  <FormItem className="relative group has-checked:border-primary has-checked:bg-primary/15 flex items-center space-x-4 space-y-0 border border-guide-500 p-4 rounded-md">
                     <FormControl>
                       <RadioGroupItem
                         value="interest-only"
@@ -208,6 +209,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                       />
                     </FormControl>
                     <FormLabel className="text-guide-900 font-bold">
+                      <span className="absolute inset-0"></span>
                       Interest Only
                     </FormLabel>
                   </FormItem>
