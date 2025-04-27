@@ -32,7 +32,7 @@ function MortgageCalculator({ className }: MortgageCalculatorProps) {
       <CardHeader>
         <MortgageForm onCalculate={handleCalculate} onReset={handleReset} />
       </CardHeader>
-      <CardFooter className="bg-guide-900">
+      <CardFooter className="bg-guide-900 lg:rounded-bl-[5rem]">
         {hasResults ? (
           <MortgageResults monthly={monthly} total={total} />
         ) : (
