@@ -50,19 +50,19 @@
 }
 
 :root {
-  --clr-primary: oklch(0.7652 0.1706 108.59);
-  --clr-danger: oklch(0.5432 0.2364 27.46);
-  --clr-neutral-200: oklch(0.9214 0.0638 237.86);
-  --clr-neutral-300: oklch(0.7472 0.0731 245.49);
-  --clr-neutral-500: oklch(0.5378 0.0487 252.77);
-  --clr-neutral-700: oklch(0.3895 0.0347 255.54);
-  --clr-neutral-900: oklch(0.2147 0.0455 250.77);
+  --clr-primary: oklch(0.86 0.177 110.61);
+  --clr-danger: oklch(0.58 0.2022 29.07);
+  --clr-neutral-200: oklch(0.96 0.0219 232.92);
+  --clr-neutral-300: oklch(0.78 0.0503 235.57);
+  --clr-neutral-500: oklch(0.64 0.054 230.27);
+  --clr-neutral-700: oklch(0.52 0.045563 230.3733);
+  --clr-neutral-900: oklch(0.29 0.0455 236.65);
 
   --radius: 0.5rem;
   --background: var(--clr-neutral-200);
   --foreground: var(--clr-neutral-900);
   --card: oklch(1 0 0);
-  --card-foreground: var(--clr-neutral-700);
+  --card-foreground: var(--clr-neutral-900);
   --popover: oklch(1 0 0);
   --popover-foreground: var(--clr-neutral-700);
   --primary: var(--clr-primary);

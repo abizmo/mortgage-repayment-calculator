@@ -1,7 +1,7 @@
 const formatToCurrency = (value: number) => {
-  return value.toLocaleString("en-UK", {
+  return value.toLocaleString("es-ES", {
     style: "currency",
-    currency: "GBP",
+    currency: "EUR",
   });
 };
 

@@ -69,7 +69,7 @@ function FormattedNumberInput({
       } items-center border border-guide-500 rounded-md overflow-hidden`}
     >
       {symbol && (
-        <span className="text-base font-bold p-4 text-guide-500 bg-guide-200/40">
+        <span className="text-base font-bold p-4 text-guide-500 bg-guide-200">
           {symbol}
         </span>
       )}
