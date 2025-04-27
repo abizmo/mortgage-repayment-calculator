@@ -133,7 +133,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
             </FormItem>
           )}
         />
-        <div>
+        <div className="grid sm:grid-cols-2 gap-x-6 gap-y-8">
           <FormField
             control={form.control}
             name="term"
@@ -143,6 +143,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                 <FormControl>
                   <FormattedNumberInput
                     symbol="years"
+                    reverse
                     value={field.value}
                     onValueChange={field.onChange}
                     name={field.name}
@@ -161,6 +162,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                 <FormControl>
                   <FormattedNumberInput
                     symbol="%"
+                    reverse
                     value={field.value}
                     onValueChange={field.onChange}
                     name={field.name}

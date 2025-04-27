@@ -10,6 +10,7 @@ import { Input } from "./input";
 
 interface FormattedNumberInputProps extends ComponentProps<"input"> {
   symbol?: string;
+  reverse?: boolean;
   onValueChange?: (value: number) => void;
 }
 
@@ -27,6 +28,7 @@ const formatNumber = (value: string | number | null | undefined): string => {
 
 function FormattedNumberInput({
   symbol,
+  reverse = false,
   onValueChange,
   value,
   name,
@@ -61,11 +63,15 @@ function FormattedNumberInput({
   };
 
   return (
-    <div className="relative">
+    <div
+      className={`flex ${
+        reverse ? "flex-row-reverse" : undefined
+      } items-center border border-guide-500 rounded-md overflow-hidden`}
+    >
       {symbol && (
-        <div>
-          <span>{symbol}</span>
-        </div>
+        <span className="text-base font-bold p-4 text-guide-500 bg-guide-200/40">
+          {symbol}
+        </span>
       )}
       <Input
         type="text"
@@ -75,6 +81,7 @@ function FormattedNumberInput({
         onChange={handleChange}
         onBlur={handleBlur}
         onFocus={handleFocus}
+        className="border-0 shadow-none focus-visible:border-0 focus-visible:ring-0"
         {...props}
       />
     </div>
