@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
+import { CardTitle } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -107,9 +108,10 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
         onReset={handleReset}
         className="space-y-8"
       >
-        <div>
-          <h1>Mortgage Calculator</h1>
-          <Button type="reset" variant="link">
+        <div className="flex flex-col items-start gap-3 sm:flex-row justify-between sm:items-center">
+          <CardTitle>Mortgage Calculator</CardTitle>
+          <Button className="relative" type="reset" variant="link" size="sm">
+            <span className="absolute -inset-3  [@media(pointer:fine)]:hidden"></span>
             Clear All
           </Button>
         </div>
