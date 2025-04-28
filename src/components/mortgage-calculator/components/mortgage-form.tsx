@@ -135,7 +135,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
             </FormItem>
           )}
         />
-        <div className="grid sm:grid-cols-2 gap-x-6 gap-y-8">
+        <div className="grid items-start sm:grid-cols-2 gap-x-6 gap-y-8">
           <FormField
             control={form.control}
             name="term"
