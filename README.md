@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []()
-- Live Site URL: []()
+- Solution URL: [https://github.com/abizmo/mortgage-repayment-calculator](https://github.com/abizmo/mortgage-repayment-calculator)
+- Live Site URL: [https://mortgage-repayment-calculator-abizmo.vercel.app/](https://mortgage-repayment-calculator-abizmo.vercel.app/)
 
 ## My process
 
