@@ -64,12 +64,12 @@ function FormattedNumberInput({
 
   return (
     <div
-      className={`flex ${
+      className={`group flex ${
         reverse ? "flex-row-reverse" : undefined
-      } items-center border border-guide-500 rounded-md overflow-hidden`}
+      } items-center border border-guide-500 rounded-md overflow-hidden hover:border-guide-900 focus-within:border-guide-900 cursor-pointer hover:[&_*]:cursor-pointer has-aria-invalid:border-guide-danger`}
     >
       {symbol && (
-        <span className="text-base font-bold p-4 text-guide-500 bg-guide-200">
+        <span className="text-base font-bold p-4 text-guide-500 bg-guide-200 group-has-aria-invalid:bg-guide-danger group-has-aria-invalid:text-white">
           {symbol}
         </span>
       )}
