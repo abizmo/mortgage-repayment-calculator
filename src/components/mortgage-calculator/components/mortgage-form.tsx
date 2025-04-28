@@ -15,9 +15,11 @@ import {
   FormLabel,
   FormMessage
 } from "@/components/ui/form";
-import { FormattedNumberInput } from "@/components/ui/formatted-number-input";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
+
+import MortgageField from "./mortgage-field";
+import MortgageOption from "./mortgage-option";
 
 const formSchema = z.object({
   amount: z
@@ -115,68 +117,24 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
             Clear All
           </Button>
         </div>
-        <FormField
+        <MortgageField
           control={form.control}
           name="amount"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Mortgage Amount</FormLabel>
-              <div className="grid gap-2">
-                <FormControl>
-                  <FormattedNumberInput
-                    symbol="€"
-                    value={field.value}
-                    onValueChange={field.onChange}
-                    name={field.name}
-                  />
-                </FormControl>
-                <FormMessage />
-              </div>
-            </FormItem>
-          )}
+          label="Mortgage Amount"
+          symbol="€"
         />
         <div className="grid items-start sm:grid-cols-2 gap-x-6 gap-y-8">
-          <FormField
+          <MortgageField
             control={form.control}
             name="term"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Mortgage Term</FormLabel>
-                <div className="grid gap-2">
-                  <FormControl>
-                    <FormattedNumberInput
-                      symbol="years"
-                      reverse
-                      value={field.value}
-                      onValueChange={field.onChange}
-                      name={field.name}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </div>
-              </FormItem>
-            )}
+            label="Mortgage Term"
+            symbol="years"
           />
-          <FormField
+          <MortgageField
             control={form.control}
             name="interestRate"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Interest Rate</FormLabel>
-                <div className="grid gap-2">
-                  <FormControl>
-                    <FormattedNumberInput
-                      symbol="%"
-                      reverse
-                      value={field.value}
-                      onValueChange={field.onChange}
-                      name={field.name}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </div>
-              </FormItem>
-            )}
+            label="Interest Rate"
+            symbol="%"
           />
         </div>
         <FormField
@@ -193,33 +151,13 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                       setRadioValue(value);
                       field.onChange(value);
                     }}
-                    // defaultValue={field.value}
                     className="flex flex-col"
                   >
-                    <FormItem className="relative group has-checked:border-primary has-checked:bg-primary/15 flex items-center space-x-4 space-y-0 border border-guide-500 p-4 rounded-md hover:[&_*]:cursor-pointer">
-                      <FormControl>
-                        <RadioGroupItem
-                          value="repayment"
-                          className="group-has-checked:border-primary"
-                        />
-                      </FormControl>
-                      <FormLabel className="text-guide-900 font-bold">
-                        <span className="absolute inset-0"></span>
-                        Repayment
-                      </FormLabel>
-                    </FormItem>
-                    <FormItem className="relative group has-checked:border-primary has-checked:bg-primary/15 flex items-center space-x-4 space-y-0 border border-guide-500 p-4 rounded-md hover:border-primary hover:[&_*]:cursor-pointer">
-                      <FormControl>
-                        <RadioGroupItem
-                          value="interest-only"
-                          className="group-has-checked:border-primary"
-                        />
-                      </FormControl>
-                      <FormLabel className="text-guide-900 font-bold">
-                        <span className="absolute inset-0"></span>
-                        Interest Only
-                      </FormLabel>
-                    </FormItem>
+                    <MortgageOption value="repayment" label="Repayment" />
+                    <MortgageOption
+                      value="interest-only"
+                      label="Interest Only"
+                    />
                   </RadioGroup>
                 </FormControl>
                 <FormMessage />
