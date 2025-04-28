@@ -1,10 +1,16 @@
 import { useState } from "react";
 
+import { Card, CardFooter, CardHeader } from "@/components/ui/card";
+
 import MortgageForm, { Result } from "./components/mortgage-form";
 import MortgageNoResults from "./mortgage-no-results";
 import MortgageResults from "./mortgage-results";
 
-function MortgageCalculator() {
+interface MortgageCalculatorProps {
+  className?: string;
+}
+
+function MortgageCalculator({ className }: MortgageCalculatorProps) {
   const [hasResults, setHasResults] = useState(false);
   const [monthly, setMonthly] = useState(0);
   const [total, setTotal] = useState(0);
@@ -22,14 +28,18 @@ function MortgageCalculator() {
   };
 
   return (
-    <div>
-      <MortgageForm onCalculate={handleCalculate} onReset={handleReset} />
-      {hasResults ? (
-        <MortgageResults monthly={monthly} total={total} />
-      ) : (
-        <MortgageNoResults />
-      )}
-    </div>
+    <Card className={className}>
+      <CardHeader>
+        <MortgageForm onCalculate={handleCalculate} onReset={handleReset} />
+      </CardHeader>
+      <CardFooter className="bg-guide-900 text-white lg:rounded-bl-[5rem]">
+        {hasResults ? (
+          <MortgageResults monthly={monthly} total={total} />
+        ) : (
+          <MortgageNoResults />
+        )}
+      </CardFooter>
+    </Card>
   );
 }
 

@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
+import { CardTitle } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -107,9 +108,10 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
         onReset={handleReset}
         className="space-y-8"
       >
-        <div>
-          <h1>Mortgage Calculator</h1>
-          <Button type="reset" variant="link">
+        <div className="flex flex-col items-start gap-3 sm:flex-row justify-between sm:items-center">
+          <CardTitle>Mortgage Calculator</CardTitle>
+          <Button className="relative" type="reset" variant="link" size="sm">
+            <span className="absolute -inset-3  [@media(pointer:fine)]:hidden"></span>
             Clear All
           </Button>
         </div>
@@ -131,7 +133,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
             </FormItem>
           )}
         />
-        <div>
+        <div className="grid sm:grid-cols-2 gap-x-6 gap-y-8">
           <FormField
             control={form.control}
             name="term"
@@ -141,6 +143,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                 <FormControl>
                   <FormattedNumberInput
                     symbol="years"
+                    reverse
                     value={field.value}
                     onValueChange={field.onChange}
                     name={field.name}
@@ -159,6 +162,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                 <FormControl>
                   <FormattedNumberInput
                     symbol="%"
+                    reverse
                     value={field.value}
                     onValueChange={field.onChange}
                     name={field.name}
@@ -173,7 +177,7 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
           control={form.control}
           name="type"
           render={({ field }) => (
-            <FormItem className="space-y-3">
+            <FormItem className="space-y-3 gap-4">
               <FormLabel>Mortgage Type</FormLabel>
               <FormControl>
                 <RadioGroup
@@ -183,19 +187,31 @@ function MortgageForm({ onCalculate, onReset }: MortgageFormProps) {
                     field.onChange(value);
                   }}
                   // defaultValue={field.value}
-                  className="flex flex-col space-y-1"
+                  className="flex flex-col"
                 >
-                  <FormItem className="flex items-center space-x-3 space-y-0">
+                  <FormItem className="relative group has-checked:border-primary has-checked:bg-primary/15 flex items-center space-x-4 space-y-0 border border-guide-500 p-4 rounded-md">
                     <FormControl>
-                      <RadioGroupItem value="repayment" />
+                      <RadioGroupItem
+                        value="repayment"
+                        className="group-has-checked:border-primary"
+                      />
                     </FormControl>
-                    <FormLabel className="font-normal">Repayment</FormLabel>
+                    <FormLabel className="text-guide-900 font-bold">
+                      <span className="absolute inset-0"></span>
+                      Repayment
+                    </FormLabel>
                   </FormItem>
-                  <FormItem className="flex items-center space-x-3 space-y-0">
+                  <FormItem className="relative group has-checked:border-primary has-checked:bg-primary/15 flex items-center space-x-4 space-y-0 border border-guide-500 p-4 rounded-md">
                     <FormControl>
-                      <RadioGroupItem value="interest-only" />
+                      <RadioGroupItem
+                        value="interest-only"
+                        className="group-has-checked:border-primary"
+                      />
                     </FormControl>
-                    <FormLabel className="font-normal">Interest Only</FormLabel>
+                    <FormLabel className="text-guide-900 font-bold">
+                      <span className="absolute inset-0"></span>
+                      Interest Only
+                    </FormLabel>
                   </FormItem>
                 </RadioGroup>
               </FormControl>

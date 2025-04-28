@@ -39,27 +39,43 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-guide-primary: var(--clr-primary);
+  --color-guide-danger: var(--clr-danger);
+  --color-guide-200: var(--clr-neutral-200);
+  --color-guide-300: var(--clr-neutral-300);
+  --color-guide-500: var(--clr-neutral-500);
+  --color-guide-700: var(--clr-neutral-700);
+  --color-guide-900: var(--clr-neutral-900);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --clr-primary: oklch(0.86 0.177 110.61);
+  --clr-danger: oklch(0.58 0.2022 29.07);
+  --clr-neutral-200: oklch(0.96 0.0219 232.92);
+  --clr-neutral-300: oklch(0.78 0.0503 235.57);
+  --clr-neutral-500: oklch(0.64 0.054 230.27);
+  --clr-neutral-700: oklch(0.52 0.045563 230.3733);
+  --clr-neutral-900: oklch(0.29 0.0455 236.65);
+
+  --radius: 0.5rem;
+  --background: var(--clr-neutral-200);
+  --foreground: var(--clr-neutral-900);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: var(--clr-neutral-900);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --popover-foreground: var(--clr-neutral-700);
+  --primary: var(--clr-primary);
+  --primary-foreground: var(--clr-neutral-900);
   --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --secondary-foreground: var(--clr-primary);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
   --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
+  --accent-foreground: var(--clr-primary);
+  --destructive: var(--clr-danger);
+  --border: var(--clr-neutral-500);
+  --input: var(--clr-neutral-500);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -68,10 +84,10 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: var(--clr-primary);
+  --sidebar-primary-foreground: var(--clr-neutral-900);
   --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-accent-foreground: var(--clr-primary);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
@@ -79,12 +95,12 @@
 .dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --card: var(--clr-primary);
+  --card-foreground: var(--clr-neutral-900);
+  --popover: var(--clr-primary);
+  --popover-foreground: var(--clr-neutral-900);
+  --primary: var(--clr-neutral-900);
+  --primary-foreground: var(--clr-primary);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
@@ -100,8 +116,8 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar: var(--clr-primary);
+  --sidebar-foreground: var(--clr-neutral-900);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.279 0.041 260.031);
