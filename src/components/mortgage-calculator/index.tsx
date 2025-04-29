@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 import { Card, CardFooter, CardHeader } from "@/components/ui/card";
+import { Result } from "@/types";
 
-import MortgageForm, { Result } from "./components/mortgage-form";
+import MortgageForm from "./components/mortgage-form";
 import MortgageNoResults from "./mortgage-no-results";
 import MortgageResults from "./mortgage-results";
 
